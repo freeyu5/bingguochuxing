@@ -1,34 +1,231 @@
 <!DOCTYPE html>
-<html>
-	<head> 
-		<link rel="stylesheet" type="text/css" href="index.css">
-		<meta charset="utf-8">
-		<script>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>槟果出行</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		img{margin:0;padding:0;}
+		a{text-decoration: none;color:black;}
+		.conaiter{width: 100%;position: relative;}
+		#header{display: flex;height:50px;padding-left: 10%;padding-top: 10px;padding-bottom:20px;background-color:white;box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);}
+		.header-logo{position: absolute;left: 18%; width: 220px;}
+		.header__menu{position: absolute;left: 45%; list-style-type: none;margin-top:20px;}
+		.header__menu li{float: left;font-size: 16px;}
+		.header__menu a{padding: 16px 28px;}
+		.header__menu>li:hover a{font-weight: bolder;}
+		.app2{display: none;width: 120px;}
+		.header__menu__item-downapp:hover+div>.app2{display: block;float: right;margin-top: 30px;border: 3px solid rgba(0, 0, 0, 0.2);}
+		.bike__connaiter{position: relative;z-index: -1; background-image: url(img/bike-bg.png);background-size:100% 100% ; width: 100%;height: 980px;background-repeat: no-repeat;}
+		.bike-font{position: absolute; padding: 30px 50px;line-height: 80px; background-color: rgba(0, 0, 0, 0.2);left:18%;top: 180px;box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.8);}
+		.bike-font>span{font-size: 65px;color: white;}
+		.time__connaiter ul{list-style-type: none;text-align: left;display: inline-block;}
+		.time__connaiter img{display: inline-block;}
+		.time__connaiter{padding-left: 18%;}
+		.km{padding: 40px 80px 40px 20px;}
+		.km img{margin-right: 28px;}
+		.val{font-size: 75px;font-weight: bolder;color: #8cd166;}
+		.val>span{font-size: 26px;font-weight: 400;color: black;}
+		.other__bike__connaiter{background-color: rgb(255, 255, 255);padding-top: 100px;padding-bottom: 100px;}
+		.bikeimg{margin-left: 18%;display: inline-block; width: 450px;height: 300px;background: url(img/danche.png);background-size: 100% 100%;vertical-align: top;}
+		.biketext{display: inline-block;text-align: left;width: 360px;line-height: 40px;vertical-align: top;margin-left: 8%;}
+		.biketext .name{font-size: 38px;}
+		.join__conaiter{position: relative;width: 100%;background-color: rgb(230, 230, 230);padding: 50px 0;}
+		.join__conaiter table{width: 1200px;height: 600px;position: relative;margin:0px auto;}
+		.join__conaiter table td{position: relative;}
+		.kf{position: absolute;bottom: 0px;left: 0px;height: 180px;width: 380px;box-shadow:0 8px 9px 0 rgba(0, 0, 0, 0.5);}
+		.spangreen{background-color: #9ad17c;}
+		.spanwhite{background-color: rgb(238, 238, 238);}
+		.join__conaiter table span:hover{height: 182px;width: 382px;box-shadow:0 8px 9px 0 rgba(0, 0, 0, 0.7);}
+		.join__conaiter table span>p{margin-left: 30%;margin-top: 6%;}
+		.join-img{position: absolute;height: 380px;width: 780px;background:url(img/map2.png);background-size: 100% 100%;bottom: 0;left: 0;text-align: center;}
+		.join-img p{width: 320px;margin: auto;font-size: 32px;color: rgb(95, 95, 95);margin-top: 120px;padding: 20px 42px;background-color: rgba(167, 167, 167,0.9);}
+		.icon-kf{position: absolute;left: 5px;top:5px;width: 70px;height: 70px;background: url(img/icon-kf.png);background-size: 100% 100%;}
+		.kf:hover .icon-kf{background: url(img/icon-kf.gif);}
+		.join__conaiter li{list-style-type: none;margin: 45px 0px;}
+		.join__conaiter ul{margin-left: 28%;}
+		.text-title{font-size: 22px;font-weight: 800;}
+		.text-p{font-size: 17px;color: rgb(90, 90, 90);font-weight: 500;}
+
+		.fooder{position: relative;height: 450px;width: 100%;background-color: #fdfffb;padding-top: 50px;text-align: center;}
+		.fooder div{display: inline-block;}
+		.fooder-con{position: relative;width: 1200px;margin: 0 auto;}
+		.company{position: absolute;left: 0px;text-align: left;}
+		.maimg{height: 180px;width: 80px;background-color: red;vertical-align: top;margin-top: 18px;margin-left: 130px;}
+		.company p{margin-top: 20px;font-size: 15px;}
+		.company p:last-child{font-size: 14px;color: rgb(120, 120,120);}
+		.company img{width: 280px;}
+		.about{position: absolute;right: 20px;vertical-align: top; border-right: solid 2px rgba(0,0,0,0.5);padding-right: 20px;}
+		.about p{margin-bottom: 30px;margin-left: 130px;margin-top: 18px;font-size: 14px;color: rgb(120, 120,120);}
+		.about p:first-child{color: rgb(0, 0, 0);}
+		.about a{font-size: 14px;color: rgb(120, 120,120);}
 		
-		</script>
-	</head>
-	
-	<body>
-		<div class="navigation-d">
-			<ul class="navigation-d-ul">
-				<li class="navigation-logo-li">
-					<a href="index.html"><img class="logo" src="/bingguochuxing/img/logo.png" /></a>
-				</li>
-				<li class="navigation-home">
-					<a class="home" href="home">首页</a>
-				</li>
-				<li class="navigation-home">
-					<a class="about" href="about">关于我们</a>
-				</li>
-				<li class="navigation-home">
-					<a class="join" href="join">加入我们</a>
-				</li>
+	</style>
+</head>
+<body>
+	<div class="conaiter">
+		<header id="header">
+			<div class="header__logo__container">
+				<a href="index.html"><img class="header-logo" src="img/logo2.png"/></a>
+			</div>
+			<ul class="header__menu">
+				<li class="header__menu__item"><a href="#">首页</a></li>
+				<li class="header__menu__item"><a href="#">入驻加盟</a></li>
+				<li class="header__menu__item"><a href="#">关于我们</a></li>
+				<li class="header__menu__item"><a href="#">联系我们</a></li>
+				<li class="header__menu__item-downapp"><a href="http://app.binguochuxing.top/app/binguo_v2.9.0_release_normal_07132016.apk">下载APP</a></li>
+				<div class="header__menu__item"><img class="app2" src="img/app2.png"/></div>
 			</ul>
+		</header>
+		<div class="bike__connaiter">
+			<div class="bike-font"><span>清 洁 便 利</span><br><span>槟 果 与 你 同 行</span></div>
 		</div>
-		<div class="vd-d">
-			<video id="myVideo" autoplay muted loop>
-				<source src="/bingguochuxing/vd/bikesharing.mp4" type="video/mp4" />
-			</video>
+		<div class="time__connaiter">
+			<div class="km">
+				<ul>
+					<li><p class="val">3500+ <span> KM²</span></p></li>
+					<li>服务区已覆盖</li>
+				</ul>
+				<img src="img/map.png" alt="map">
+			</div>
+			<div class="km">
+				<img src="img/map.png" alt="map">
+				<ul>
+					<li><p class="val">500w+ <span> 公里</span></p></li>
+					<li>骑行总里程</li>
+				</ul>
+			</div>
+			<div class="km">
+				<ul>
+					<li><p class="val">20+ <span> 吨</span></p></li>
+					<li>减少碳排放</li>
+				</ul>
+				<img src="img/map.png" alt="map">
+			</div>
 		</div>
-	</body>
+		<div class="other__bike__connaiter">
+			<div class="bikeimg">
+			</div>
+			<div class="biketext">
+				<p class="name">槟果出行</p><br>
+				<p>槟果科技致力于共享电单车骑行服务，针对城市人们面临的5公里
+					以内短途出行难题，以创新的移动互联网思维，经济的出行成本,
+					高效的出行效率提升城市人们的出行体验。
+					通过手机端的操作，即可完成租还车流程，过程简单,方便快捷。
+				</p>
+			</div>
+		</div>
+		<div class="join__conaiter">
+			<table border="0">
+				<tr>
+					<td>
+						<span class="spangreen kf">
+							<ul>
+								<li class="text-title">
+									核心技术支撑
+								</li>
+								<li class="text-p">
+									平台自主研发，拥有核心技术
+								</li>
+							</ul>
+							<div class="icon-kf">
+							</div>
+						</span>
+					</td>
+					<td>
+						<span class="spanwhite kf">
+							<ul>
+								<li class="text-title">
+									核心技术支撑
+								</li>
+								<li class="text-p">
+									平台自主研发，拥有核心技术
+								</li>
+							</ul>
+							<div class="icon-kf">
+							</div>
+						</span>
+					</td>
+					<td>
+						<span class="spangreen kf">
+							<ul>
+								<li class="text-title">
+									核心技术支撑
+								</li>
+								<li class="text-p">
+									平台自主研发，拥有核心技术
+								</li>
+							</ul>
+							<div class="icon-kf">
+							</div>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td>
+						<span class="spanwhite kf">
+							<ul>
+								<li class="text-title">
+									核心技术支撑
+								</li>
+								<li class="text-p">
+									平台自主研发，拥有核心技术
+								</li>
+							</ul>
+							<div class="icon-kf">
+							</div>
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<!--join 图片 了解更多-->
+					<td>
+						<div class="join-img">
+							<p>了 解 更 多</p>
+						</div>
+					</td>
+
+					<td></td>
+					<td>
+						<span class="spangreen kf">
+							<ul>
+								<li class="text-title">
+									核心技术支撑
+								</li>
+								<li class="text-p">
+									平台自主研发，拥有核心技术
+								</li>
+							</ul>
+							<div class="icon-kf">
+							</div>
+						</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="fooder">
+			<div class="fooder-con">
+				<div class="company">
+					<img src="img/logo2.png"/>
+					<p>上海悦谌网络科技有限公司<br>
+						联系电话 4001598179
+					</p>
+					<p>© bgcx.com ICP备</p>
+				</div>
+				<div class="maimg">
+				</div>
+				<div class="about">
+					<p>关于槟果</p>
+					<p><a href="#">槟果简介</a></p>
+					<p><a href="#">槟果使命</a></p>
+					<p><a href="#">联系我们</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 </html>

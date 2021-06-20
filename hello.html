@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="font-size: 100px;">
+ <head>
+  <title>哈啰出行</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="哈啰出行是国内领先的本地出行及生活服务平台，致力于应用数字技术的红利，为人们提供更便捷的出行以及更好的普惠生活服务。" />
+  <meta name="keywords" content="哈啰出行,哈罗出行,哈罗单车,哈啰单车,Hellobike,哈啰助力车,哈罗助力车,单车,助力车,Hello bike,电动车,换电" />
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="shortcut icon" href="https://www.hello-inc.com/res/image/favicon.ico" />
+  <link rel="bookmark" href="https://www.hello-inc.com/res/image/favicon.ico" />
+  <link rel="stylesheet" href="https://www.hello-inc.com/style/index.css?t=1621602086729" />
+  <link rel="stylesheet" href="https://www.hello-inc.com/online-public/libs/swiper/swiper.min.css" />
+  <script>!function (e) { var n = {}; function t(r) { if (n[r]) return n[r].exports; var o = n[r] = { i: r, l: !1, exports: {} }; return e[r].call(o.exports, o, o.exports, t), o.l = !0, o.exports } t.m = e, t.c = n, t.d = function (e, n, r) { t.o(e, n) || Object.defineProperty(e, n, { enumerable: !0, get: r }) }, t.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, t.t = function (e, n) { if (1 & n && (e = t(e)), 8 & n) return e; if (4 & n && "object" == typeof e && e && e.__esModule) return e; var r = Object.create(null); if (t.r(r), Object.defineProperty(r, "default", { enumerable: !0, value: e }), 2 & n && "string" != typeof e) for (var o in e) t.d(r, o, function (n) { return e[n] }.bind(null, o)); return r }, t.n = function (e) { var n = e && e.__esModule ? function () { return e.default } : function () { return e }; return t.d(n, "a", n), n }, t.o = function (e, n) { return Object.prototype.hasOwnProperty.call(e, n) }, t.p = "", t(t.s = 0) }([function (e, n, t) { var r, o, i; o = [], void 0 === (i = "function" == typeof (r = function () { "use strict"; if (!window.TianQi || !window.TianQi.sdkVersion) { var e = function (e) { o.push({ actionType: "EVENT", eventName: "error", useCapture: !1, params: e }) }, n = function (e) { o.push({ actionType: "EVENT", eventName: "error", useCapture: !0, params: e }) }, t = function (e) { o.push({ actionType: "EVENT", eventName: "unhandledrejection", params: e }) }, r = function (r) { var o; (o = document.createElement("script")).type = "text/javascript", o.async = !0, o.src = "https://cdn.hellobike.com/npm/@hb/tianqi@".concat(r, "/lib/h5.js"), document.head.insertBefore(o, document.head.firstElementChild), o.onload = function () { window.TianQi && window.TianQi.sdkVersion && (window.removeEventListener("error", e), window.removeEventListener("error", n, !0), window.removeEventListener("unhandledrejection", t), i = !0) } }, o = window.__TIANQI_ACTION_QUEUE = [], i = !1; !function () { var e = window.TianQi = {}; e.loadSDK = function (e) { if (!e) throw new Error("loadSDK必须传入sdk版本号"); r(e) }; var n = { UBT: ["config", "bindData", "pageView", "pageViewOut", "clickButton", "moduleExpose", "customEvent", "bindUTM", "bindPTM", "sendError"], APM: ["log", "sendError"] }; Object.keys(n).forEach(function (t) { var r = n[t], a = e[t] = {}; r.forEach(function (e) { a[e] = function () { var n; i ? (n = window.TianQi[t])[e].apply(n, arguments) : o.push({ actionType: "API_CALL", entryName: t, apiName: e, params: Array.prototype.slice.call(arguments, 0) }) } }) }), window.TianQi.APM.trackHttp = function () { if (i) return window.TianQi.APM.trackHttp(); var e; function n() { return i ? (e || (e = window.__TIANQI_TRACK_HTTP_OBJECT || window.TianQi.APM.trackHttp()), e) : { request: function (e) { var n = function () { for (var e = "", n = 0; n < 4; n++)e += "0000000".concat(Math.floor(2821109907456 * Math.random()).toString(36)).slice(-8); return e }(); !function (e, n) { var t = e || {}, r = t.url, o = t.data, i = (e || {}).headers, a = n, c = -1; try { if ("string" == typeof o) c = o.length; else if (o instanceof Object) { var u = JSON.stringify(o); c = u.length } } catch (e) { } var s = o; if ("string" == typeof o) try { s = JSON.parse(o) } catch (e) { s = {} } var p = (s || {}).action; i || (i = {}), i.requestId = a, e.headers = i, e.requestInfo = { requestId: a, networkUrl: r, networkAction: p || "", reqContentLength: c, requestStart: Date.now() } }(e, n), o.push({ actionType: "HTTP", eventName: "request", timestamp: Date.now(), uuid: n, params: [e] }) }, response: function () { o.push({ actionType: "HTTP", eventName: "response", timestamp: Date.now(), params: Array.prototype.slice.call(arguments, 0) }) }, error: function () { o.push({ actionType: "HTTP", eventName: "error", timestamp: Date.now(), params: Array.prototype.slice.call(arguments, 0) }) } } } return { request: function () { n().request.apply(this, arguments) }, response: function () { n().response.apply(this, arguments) }, error: function () { n().error.apply(this, arguments) } } } }(), window.addEventListener("error", e), window.addEventListener("error", n, !0), window.addEventListener("unhandledrejection", t) } }) ? r.apply(n, o) : r) || (e.exports = i) }]);
+    window.TianQi.loadSDK('2.5.0')</script>
+  <script src="./js/common.js?t=1621602086729"></script>
+  <script src="https://www.hello-inc.com/online-public/libs/swiper/swiper.min.js"></script>
+  <script type="text/javascript">if (
+      window.location.host === 'www.hellobike.com' &&
+      window.location.host === 'www.helloglobal.com'
+    ) {
+      window.location.href = 'https://www.hello-inc.com' + window.location.pathname;
+    }
+    function setRootFont() {
+      if (window.location.pathname === '/index.html') {
+        document.documentElement.style.fontSize = 100 * document.documentElement.clientWidth / 1920 + 'px';
+      } else {
+        document.documentElement.style.fontSize = 100 * document.documentElement.clientWidth / 1920 + 'px';
+      }
+    }
+    function getPath() {
+      var path = location.pathname.split('/').filter(function(v){return v})
+      if (path.indexOf('m') + 1) {
+        return '/' + path.filter(function(v){return v !== 'm'}).join('/') + location.search
+      }
+      if (path.length === 0) {
+        return '/m/index.html' + location.search
+      }
+      path[path.length - 1] = 'm/' + path[path.length - 1] || ''
+      return '/' + path.join('/') + location.search
+    }
+    if (isMobile()) {
+      location.replace(getPath());
+    } else {
+      window.addEventListener("DOMContentLoaded", function () {
+        //rem相关配置，所有屏幕宽度为19.20rem, 相当于原先的100px写成rem后是1rem;
+        setRootFont();
+        // function listDirection() {
+        //   if (document.documentElement.clientWidth < 1300) {
+        //     $('#contact-us').addClass('to-left');
+        //   } else {
+        //     $('#contact-us').removeClass('to-left');
+        //   }
+        // }
+        // listDirection();
+        window.onresize = function() {
+          // listDirection();
+          setRootFont();
+        };
+      }, false)
+    }</script>
+ </head>
+ <body>
+  <header id="header" class="header fixed shadow">
+   <div class="header__container">
+    <div class="header-logo-container">
+     <a href="./index.html"><img id="logo" class="header__logo" src="https://www.hello-inc.com/online-public/header__logo.png" alt="Hellobike" /></a>
+    </div>
+    <ul class="header__menu">
+     <li class="header__menu-item"><a href="./index.html" class="hover-target">首页</a></li>
+     <li class="header__menu-item with-child"><a><span class="hover-target">哈啰业务</span>
+       <ul class="list">
+        <li onclick="window.location.href='./business-bike.html'"><img src="https://www.hello-inc.com/online-public/shared/header__danche.png" alt="单车" /> 哈啰单车</li>
+        <li onclick="window.location.href='./business-ebike.html'"><img src="https://www.hello-inc.com/online-public/shared/header__zhuliche.png" alt="助力车" />哈啰助力车</li>
+        <li onclick="window.location.href='./business-service.html'"><img src="https://www.hello-inc.com/online-public/shared/header__chefu.png" alt="车服" />哈啰电动车</li>
+        <li onclick="window.location.href='./business-battery.html'"><img src="https://www.hello-inc.com/online-public/shared/header__huandian.png" alt="换电" />小哈换电</li>
+        <!-- <li onclick="window.location.href='./business-play.html'"><img
+                  src="https://www.hello-inc.com/online-public/shared/header__youwan.png" alt="景区">哈啰景区</li> -->
+       </ul></a></li>
+     <li class="header__menu-item with-child"><a href="./technology.html" class="hover-target">哈啰科技</a></li>
+     <li class="header__menu-item"><a href="./news.html">资讯中心</a></li>
+     <li class="header__menu-item with-child"><a><span class="hover-target">关于我们</span>
+       <ul class="list">
+        <li onclick="window.location.href='./about-brief.html'"><img src="https://www.hello-inc.com/online-public/shared/header__brief.png" alt="哈啰简介" />哈啰简介</li>
+        <li onclick="window.location.href='./about-founder.html'"><img src="https://www.hello-inc.com/online-public/shared/header__leader.png" alt="领导团队" />领导团队</li>
+        <!-- <li onclick="window.location.href='./about-history.html'"><img
+                  src="https://www.hello-inc.com/online-public/shared/header__history.png" alt="发展历程">发展历程</li> -->
+        <li onclick="window.location.href='./about-prize.html'"><img src="https://www.hello-inc.com/online-public/shared/header__prize.png" alt="荣誉奖项" />荣誉奖项</li>
+        <li onclick="window.location.href='./about-social.html'"><img src="https://www.hello-inc.com/online-public/shared/header__social.png" alt="社会责任" />社会责任</li>
+        <!-- <li onclick="window.location.href='./about-gov.html'"><img
+                  src="https://www.hello-inc.com/online-public/shared/header__gov.png" alt="政企合作">政企合作</li> -->
+       </ul></a></li>
+     <li class="header__menu-item with-child" id="contact-us"><a><span class="hover-target">联系我们</span>
+       <ul class="list">
+        <li onclick="window.location.href='./contact-index.html'"><img src="https://www.hello-inc.com/online-public/shared/header__contact.png" alt="联系我们" />联系我们</li>
+        <li onclick="window.open('https://careers.hellobike.com/')"><img src="https://www.hello-inc.com/online-public/shared/header__join.png" alt="加入我们" />加入我们</li>
+       </ul></a></li>
+     <li class="move left-25"></li>
+    </ul>
+   </div>
+  </header>
+  <div class="page__title index">
+   <div class="content">
+    <div class="slogan">
+     <span></span> 
+     <span></span>
+    </div>
+   </div>
+  </div>
+  <div style="clear: both; background: white;">
+   <div class="index__body">
+    <section class="top__banner">
+     <video id="video-player" muted="" x5-video-player-type="h5" x-webkit-airplay="true" webkit-playsinline="true" playsinline="" poster="https://www.hello-inc.com/videos/home_bg_video_v3.mp4?x-oss-process=video/snapshot,t_0,f_jpg,m_fast" preload="none" autoplay="" loop="">
+      <source src="https://www.hello-inc.com/videos/home_bg_video_v3.mp4" muted="" type="video/mp4" x5-video-player-type="h5" x-webkit-airplay="true" webkit-playsinline="true" playsinline="" poster="" preload="none" autoplay="" loop=""></source>
+      <track kind="captions"></track>
+     </video>
+     <div class="banner__body">
+      <div class="slogan">
+       <span class="line line-1">哈啰出行</span> 
+       <span class="line line-2">行好生活每一程</span>
+      </div>
+      <div class="operation">
+       <div class="operation--button download">
+        <img src="https://www.hello-inc.com/online-public/index/index__download.png" alt="下载" /> 
+        <span>下载客户端</span>
+        <div class="operation__qr">
+         <div class="operation__qr--body">
+          <img src="https://www.hello-inc.com/online-public/index/index__qr.png" alt="" />
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <img onclick="scroll2()" class="index__down" src="https://www.hello-inc.com/online-public/index/index__down.png" alt="↓" />
+    </section>
+    <section class="index__intro">
+     <div class="index__intro--main">
+      <div class="video-preview preview" data-src="https://www.hello-inc.com/videos/hello-inc-intro.mp4">
+       <img class="preview-image" src="https://www.hello-inc.com/online-public/index/index-intro-preview.png" alt="play" /> 
+       <img class="play-icon" src="https://www.hello-inc.com/online-public/index/index-play-icon.png" alt="" />
+      </div>
+      <div class="intro-text">
+       <span class="intro-title">哈啰出行</span> 
+       <span class="intro-body">国内领先的本地出行及生活服务平台，致力于应用数字技术的红利，为人们提供更便捷的出行以及更好的普惠生活服务。公司于2016年9月在上海成立，从大家最熟悉的共享单车业务起步，逐渐进化为包括两轮出行、四轮出行、酒旅以及到店服务等多元化的出行及生活服务平台。</span>
+      </div>
+     </div>
+    </section>
+    <section class="index__business">
+     <div class="index__business--main">
+      <div class="index__business--title section-title">
+       <div class="title" id="business">
+        业务布局
+       </div>
+       <div class="subtitle">
+        Business Layout
+       </div>
+      </div>
+      <div class="index__business-body">
+       <div class="swiper-container">
+        <div class="swiper-wrapper">
+         <div class="swiper-slide swiper-slide-type-1">
+          <div class="slide-item">
+           <img src="https://www.hello-inc.com/online-public/index/index-slide-1-1.png" alt="" class="slide-item-img" /> 
+           <span class="slide-item-title">哈啰骑行</span> 
+           <span class="slide-item-desc"><span>科技引领两轮出行进化，持续</span> <span>迭代好骑的用户体验，智慧运</span> <span>营推动绿色低碳出行普及。</span></span>
+          </div>
+          <div class="slide-item">
+           <img src="https://www.hello-inc.com/online-public/index/index-slide-1-2.png" alt="" class="slide-item-img" /> 
+           <span class="slide-item-title">哈啰顺风车</span> 
+           <span class="slide-item-desc"><span>以技术驱动更合理的司乘匹配</span> <span>出行供需，为用户提供更值得</span> <span>信赖的拼车服务。</span></span>
+          </div>
+         </div>
+         <div class="swiper-slide swiper-slide-type-1">
+          <div class="slide-item">
+           <img src="https://www.hello-inc.com/online-public/index/index-slide-2-1.png" alt="" class="slide-item-img" /> 
+           <span class="slide-item-title">哈啰全网叫车</span> 
+           <span class="slide-item-desc"><span>携手嘀嗒出租车、首汽约车等</span> <span>多个合作伙伴，为用户构筑更</span> <span>开放、更多元的出行服务。</span></span>
+          </div>
+          <div class="slide-item">
+           <img src="https://www.hello-inc.com/online-public/index/index-slide-2-2.png" alt="" class="slide-item-img" /> 
+           <span class="slide-item-title">哈啰打车</span> 
+           <span class="slide-item-desc"><span>以“普惠”为核心价值主张，解</span> <span>决用户“打车难，打车贵，选</span> <span>择少”的出行难题。</span></span>
+          </div>
+         </div>
+         <div class="swiper-slide swiper-slide-type-2">
+          <div class="slide-item">
+           <img src="https://www.hello-inc.com/online-public/index/index-slide-3-1.png" alt="" class="slide-item-img" /> 
+           <span class="slide-item-title">哈啰电动车</span> 
+           <span class="slide-item-desc"><span>以软件定义硬件，首倡超连网</span> <span>车机系统，面向用户创造人车</span> <span>互动新体验。</span></span>
+          </div>
+          <div class="slide-item">
+           <img src="https://www.hello-inc.com/online-public/index/index-slide-3-2.png" alt="" class="slide-item-img" /> 
+           <span class="slide-item-title">小哈换电</span> 
+           <span class="slide-item-desc"><span>构建数字物联的两轮出行基础能</span> <span>源网络，为用户提供安全便捷的</span> <span>动力续航与极速换电服务。</span></span>
+          </div>
+          <div class="slide-item">
+           <img src="https://www.hello-inc.com/online-public/index/index-slide-3-3.png" alt="" class="slide-item-img" /> 
+           <span class="slide-item-title">哈啰酒店</span> 
+           <span class="slide-item-desc"><span>凭借强大的出行综合实力赋能</span> <span>酒店住宿领域，为用户打造“连</span> <span>接出行”的酒店预订平台。</span></span>
+          </div>
+          <div class="slide-item">
+           <img src="https://www.hello-inc.com/online-public/index/index-slide-3-4.png" alt="" class="slide-item-img" /> 
+           <span class="slide-item-title">哈啰生活</span> 
+           <span class="slide-item-desc"><span>以科技赋能本地生活，为用户</span> <span>提供餐饮、酒店、休闲娱乐等</span> <span>高性价比的到店团购服务。</span></span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="slides-arrow slides-right" onclick="swiper1Right()">
+        <div class="slides-arrow-inner slides-right-inner"></div>
+       </div>
+       <div class="slides-arrow slides-left" onclick="swiper1Left()">
+        <div class="slides-arrow-inner slides-left-inner"></div>
+       </div>
+       <div class="slides-pagi">
+        <ul class="pagi-business" id="swiper1-navi">
+         <li class="active" data-type="0">共享出行服务</li>
+         <li data-type="1">网约车服务</li>
+         <li data-type="2">本地生活服务</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="one-screen index__tech">
+     <div class="swiper-container tech-swiper">
+      <div class="swiper-wrapper">
+       <div class="swiper-slide hitch">
+        <div class="tech-body calc-left">
+         <div class="tech-body-title">
+          普惠
+         </div>
+         <div class="tech-body-desc">
+          坚持以用户为中心，
+         </div>
+         <div class="tech-body-desc">
+          提供更多可负担的选择。
+         </div>
+        </div>
+       </div>
+       <div class="swiper-slide brain">
+        <div class="tech-body calc-left">
+         <div class="tech-body-title">
+          科技
+         </div>
+         <div class="tech-body-desc">
+          推动出行进化，
+         </div>
+         <div class="tech-body-desc">
+          为用户提供极致体验。
+         </div>
+        </div>
+       </div>
+       <div class="swiper-slide hardware">
+        <div class="tech-body calc-left">
+         <div class="tech-body-title">
+          安全
+         </div>
+         <div class="tech-body-desc">
+          严守安全防线，
+         </div>
+         <div class="tech-body-desc">
+          为每一程保驾护航。
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="swiper-next" onclick="swiper2.slideNext()">
+      <div class="swiper-next-inner"></div>
+     </div>
+    </section>
+    <section class="index__duty">
+     <div class="index__duty--main">
+      <div class="duty-top">
+       <div class="section-title">
+        <div class="title">
+         社会责任
+        </div>
+        <div class="subtitle">
+         Social Responsibility
+        </div>
+       </div>
+       <div class="duty-more-btn" onclick="window.location.href='./about-social.html'">
+        了解更多
+       </div>
+      </div>
+      <div class="duty-statistics">
+       <div class="duty-statistics-left" id="save-entry">
+        <div class="duty-item duty-miles">
+         <div class="duty-item-top">
+          <div class="duty-item-number">
+           237
+          </div>
+          <div class="duty-item-sub">
+           亿公里
+          </div>
+         </div>
+         <div class="duty-item-desc">
+          累计骑行里程
+         </div>
+        </div>
+        <div class="duty-item duty-quan">
+         <div class="duty-item-top">
+          <div class="duty-item-number">
+           59
+          </div>
+          <div class="duty-item-sub">
+           万圈
+          </div>
+         </div>
+         <div class="duty-item-desc">
+          绕地球
+         </div>
+        </div>
+        <div class="duty-item duty-ton">
+         <div class="duty-item-top">
+          <div class="duty-item-number">
+           280
+          </div>
+          <div class="duty-item-sub">
+           万吨
+          </div>
+         </div>
+         <div class="duty-item-desc">
+          累计碳排放减少量
+         </div>
+        </div>
+       </div>
+       <div class="duty-statistics-right">
+        <img class="duty-earth" src="https://www.hello-inc.com/online-public/index/index__earth.gif" alt="地球" />
+        <div class="duty-statistics-right-title">
+         共享出行为地球减负
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <!-- <section class="media">
+    <div class="wrapper">
+      <div class="index__media--title section-title">
+        <div class="title">品牌宣传片</div>
+        <div class="subtitle">Brand Video</div>
+      </div>
+      <div class="list">
+        <div class="preview normal" data-src="https://www.hello-inc.com/videos/brand_video_1_2.mp4">
+          <div class="image">
+            <img src="https://www.hello-inc.com/online-public/video-bg2.png" alt="品牌宣传片">
+          </div>
+          <p class="title">哈啰出行宣传片</p>
+        </div>
+        <div class="preview normal" data-src="https://www.hello-inc.com/videos/brand_video_2_new.mp4">
+          <div class="image">
+            <img src="https://www.hello-inc.com/online-public/video-bg1.png" alt="品牌宣传片">
+          </div>
+          <p class="title">哈啰 我们路上见</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+    <div class="video-container" id="video-container" style="display: none">
+     <div class="video-p">
+      <video class="video-vnp" id="videoone" controls="" loop="">
+       <source id="source" src=""></source>
+      </video>
+     </div>
+     <div class="video-close">
+      <img src="https://www.hello-inc.com/online-public/search_close.png" id="closeVideo" style="width: 20px" />
+     </div>
+    </div>
+   </div>
+   <script src="https://www.hello-inc.com/online-public/libs/jquery3.js"></script>
+   <script src="https://www.hello-inc.com/online-public/libs/smooth-scroll.js"></script>
+   <script src="https://www.hello-inc.com/online-public/libs/swiper/swiper.min.js"></script>
+   <script src="./js/index.js?t=1621602086563"></script>
+   <!-- <script src="./js/modal.js?t=1621602086563"></script> -->
+   <script>$("#video-player").each(function () {
+    var item = this.play();
+    if (item && item.catch) {
+      item.catch(function () {});
+    }
+  });</script>
+   <script>/* ========
+  Debugger plugin, simple demo plugin to console.log some of callbacks
+  ======== */
+  var slogan = $(".pagi-slogan-title");
+  var ua = window.navigator.userAgent;
+  function IEVersion() {
+    var userAgent = navigator.userAgent;
+    var isIE =
+      userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
+    var isEdge = userAgent.indexOf("Edge") > -1 && !isIE;
+    var isIE11 =
+      userAgent.indexOf("Trident") > -1 && userAgent.indexOf("rv:11.0") > -1;
+    if (isIE) {
+      var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+      reIE.test(userAgent);
+      var fIEVersion = parseFloat(RegExp["$1"]);
+      if (fIEVersion == 7) {
+        return 7;
+      } else if (fIEVersion == 8) {
+        return 8;
+      } else if (fIEVersion == 9) {
+        return 9;
+      } else if (fIEVersion == 10) {
+        return 10;
+      } else {
+        return 6; //IE版本<=7
+      }
+    } else if (isEdge) {
+      return "edge"; //edge
+    } else if (isIE11) {
+      return 11; //IE11
+    } else {
+      return -1; //不是ie浏览器
+    }
+  }
+
+  if (IEVersion() !== -1) {
+    $("#video-player").addClass("isIE");
+  }
+
+  var swiper1Map = [
+    {
+      short: "danche",
+      slogan: "哈啰单车 蓝车更好骑",
+      url: "./business-bike.html",
+    },
+    {
+      short: "zhuliche",
+      slogan: "哈啰助力车 助力每一程",
+      url: "./business-ebike.html",
+    },
+    {
+      short: "chefu",
+      slogan: "哈啰电动车 全系标配 6大科技功能",
+      url: "./business-service.html",
+    },
+    { short: "huandian", slogan: "小哈换电", url: "./business-battery.html" },
+    {
+      short: "youwan",
+      slogan: "哈啰景区 想玩就玩",
+      url: "./business-play.html",
+    },
+  ];
+  var swiper1Items = $("#swiper1-navi li");
+  var myPlugin1 = {
+    name: "debugger",
+    params: {
+      debugger: false,
+      type: 1,
+    },
+    on: {
+      slideChange: function () {
+        if (this.params.type === 1) {
+          slogan.text(swiper1Map[this.realIndex].slogan);
+          swiper1Items.removeClass("active");
+          swiper1Items.eq(this.realIndex).addClass("active");
+        }
+      },
+    },
+  };</script>
+   <script>function scroll2() {
+    window.scrollTo({
+      top: $("#business").offset().top || 1000,
+      behavior: "smooth",
+    });
+  }
+  // Install Plugin To Swiper
+  // Init Swiper
+  var swiper1;
+  setTimeout(function () {
+    Swiper.use(myPlugin1);
+    swiper1 = new Swiper(".index__business .swiper-container", {
+      // Enable debugger
+      debugger: true,
+      initialSlide: 0,
+      loop: true,
+      type: 1,
+    });
+  }, 400);
+
+  function swiper1Left() {
+    const canNext = swiper1.slidePrev();
+  }
+  function swiper1Right() {
+    const canNext = swiper1.slideNext();
+  }
+
+  $("#swiper1-navi").click(function (event) {
+    if (event.target.dataset.type !== undefined) {
+      swiper1Items.removeClass("active");
+      $(event.target).addClass("active");
+      swiper1.slideToLoop(+event.target.dataset.type);
+    }
+  });
+  var swiper2;
+  setTimeout(function () {
+    swiper2 = new Swiper(".index__tech .swiper-container", {
+      // Enable debugger
+      debugger: true,
+      // initialSlide: 1,
+      spaceBetween: 22,
+      slidesPerView: "auto",
+      loop: true,
+      type: 2,
+    });
+  }, 400);
+
+  function goBusinessPage() {
+    window.location.href = swiper1Map[swiper1.realIndex].url;
+  }
+  function goBusinessPage() {
+    window.location.href = swiper1Map[swiper1.realIndex].url;
+  }
+  $(".operation--button.download").hover(function () {
+    window.TianQi.UBT.clickButton({
+      pageId: "PCofficialwebsite",
+      buttonName: "PCofficialwebsitexz",
+      categoryId: "platform",
+      businessInfo: {},
+    });
+    window.TianQi.UBT.moduleExpose({
+      pageId: "PCofficialwebsite",
+      categoryId: "platform",
+      moduleId: "PCofficialwebsitexz",
+      contentId: "PCofficialwebsitexz",
+      exposureTimes: 1,
+      businessInfo: {},
+    });
+  });</script>
+  </div>
+  <div class="footer">
+   <div class="content">
+    <div class="logo__wrapper">
+     <img class="logo" src="https://www.hello-inc.com/online-public/header__logo--colored.png" alt="Hellobike" />
+     <div class="tel">
+      <p>联系电话 95218900</p>
+      <p>上海钧正网络科技有限公司</p>
+     </div>
+     <div class="record">
+      <div>
+       &copy; hello-inc.com&nbsp;
+       <a target="_blank" href="http://www.beian.miit.gov.cn">沪ICP备16050850号-2</a>
+      </div>
+      <div>
+       增值电信业务经营许可证编号：沪B2-20201172
+      </div>
+      <div>
+       <img src="https://www.hello-inc.com/online-public/wangan.png" alt="" /> 
+       <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011202007567" target="_blank">沪公网安备 31011202007567号 </a>&nbsp;|&nbsp; 
+       <a target="_blank" href="http://wap.scjgj.sh.gov.cn/businessCheck/verifKey.do?showType=extShow&amp;serial=9031000020181213104636000003456828-SAIC_SHOW_310000-20191202135717172087&amp;signData=MEYCIQC5EVgJ/BryKrcZB6jOcLNw7HAWn6rPJlIit8jg6ug8mgIhAOg1vF3DUfVJkMPpsiUfdm+6+40Z88mYrIELcvoDlsKK"><img src="https://www.hello-inc.com/res/image/m/license-logo.jpg" alt="" /></a>
+      </div>
+     </div>
+    </div>
+    <div class="footer-columns">
+     <div class="know footer-column">
+      <h3>了解哈啰</h3>
+      <p><a href="./technology.html">哈啰科技</a></p>
+      <p><a href="./business-bike.html">哈啰单车</a></p>
+      <p><a href="./business-ebike.html">哈啰助力车</a></p>
+      <p><a href="./business-service.html">哈啰电动车</a></p>
+      <p><a href="./business-battery.html">小哈换电</a></p>
+      <!-- <p><a href="./business-play.html">哈啰景区</a></p> -->
+     </div>
+     <div class="about footer-column">
+      <h3>关于哈啰</h3>
+      <p><a href="./about-brief.html">哈啰简介</a></p>
+      <p><a href="./about-founder.html">领导团队</a></p>
+      <!-- <p><a href="./about-history.html">发展历程</a></p> -->
+      <p><a href="./about-prize.html">荣誉奖项</a></p>
+      <p><a href="./about-social.html">社会责任</a></p>
+      <p><a href="./news.html">资讯中心</a></p>
+     </div>
+     <div class="join footer-column">
+      <h3>联系我们</h3>
+      <p><a href="./contact-index.html">联系我们</a></p>
+      <p><a href="https://careers.hellobike.com">加入我们</a></p>
+     </div>
+     <div class="social footer-column">
+      <h3>社交网络</h3>
+      <div>
+       <div>
+        <a href="http://weibo.com/hellobikedanche"></a> 
+        <a class="wechat" href="javascript:void(0);"><span class="QR__code"></span> </a>
+        <a href="https://twitter.com/Hellobike_china"></a>
+       </div>
+       <div>
+        <a href="https://www.facebook.com/hellobikechina/"></a> 
+        <a href="https://www.instagram.com/hellobike_china/"></a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>var doc = $(document);
+    var header = $('#header');
+    var logo = $('#logo');
+    var orginLogo = 'https://www.hello-inc.com/online-public/header__logo.png';
+    var coloredLogo = 'https://www.hello-inc.com/online-public/header__logo--colored.png'
+    var clientHeight = $(window).height();
+    var lastTop = doc.scrollTop();
+    var lastPosition = 'up';
+    // 重定向到https
+    var href = window.location.href;
+    if (href.indexOf('http://www') === 0) {
+      window.location.href = href.replace('http', 'https');
+    }
+    window.TianQi.UBT.config({
+      env: window.__ENV,
+      categoryId: 'platform',
+    });
+    window.TianQi.UBT.bindData({
+      appName: 'AppHellobikeWWW',
+      appVersion: '1.2.1',
+      userGuid: '',
+      cityCode: '',
+      adCode: '',
+      longitude: '',
+      latitude: '',
+    })
+    $('.social .wechat').click(function () {
+      $(this)
+        .find('.QR__code')
+        .fadeIn();
+    });
+    $(document).mouseup(function (e) {
+      var _con = $('.social .wechat'); // 设置目标区域
+      if (!_con.is(e.target) && _con.has(e.target).length === 0) {
+        _con.find('.QR__code').fadeOut();
+      }
+    });
+    if (header.hasClass('fixed')) {
+      if (window.location.pathname.indexOf('/detail.html') !== -1
+        || window.location.pathname.indexOf('use.html') !== -1) {
+        header.addClass('float-up')
+      }
+      if (doc.scrollTop() >= 80) {
+        header.addClass('float-up')
+        logo.attr('src', coloredLogo)
+      }
+      $(document).scroll(function () {
+        // if (doc.scrollTop() > clientHeight) {
+        //   header.addClass('shadow')
+        // } else {
+        //   header.removeClass('shadow')
+        // }
+        if (doc.scrollTop() > lastTop) {
+          if (doc.scrollTop() < 80) {
+            if (window.location.pathname.indexOf('/detail.html') !== -1
+              || window.location.pathname.indexOf('use.html') !== -1) {
+              header.removeClass('float-down');
+              header.addClass('float-up');
+            } else {
+              header.removeClass('float-down float-up')
+              logo.attr('src', orginLogo)
+            }
+          } else if (lastPosition === 'up') {
+            lastPosition = 'down'
+            header.removeClass('float-up')
+            header.addClass('float-down')
+          }
+        } else if (doc.scrollTop() < lastTop) {
+          if (doc.scrollTop() < 80) {
+            if (window.location.pathname.indexOf('/detail.html') !== -1
+              || window.location.pathname.indexOf('use.html') !== -1) {
+              header.removeClass('float-down');
+              header.addClass('float-up');
+            } else {
+              header.removeClass('float-down float-up')
+              logo.attr('src', orginLogo)
+            }
+          } else if (lastPosition === 'down') {
+            lastPosition = 'up'
+            header.removeClass('float-down')
+            header.addClass('float-up')
+            logo.attr('src', coloredLogo)
+          }
+        }
+        lastTop = doc.scrollTop();
+      });
+    }
+    var swiperPage = ['business', 'about-brief'];
+    var noSwiperPage = [];
+    var swiper;
+    var myPlugin = {
+      name: 'debugger',
+      params: {
+        debugger: false,
+        type: 1,
+      },
+      on: {
+        slideChange: function () {
+          if (this.realIndex === 0) {
+            $('.hitch-extra').show();
+          } else {
+            $('.hitch-extra').hide();
+          }
+        },
+      },
+    };
+    if (
+      swiperPage.filter(function(v){ return window.location.pathname.indexOf(v) !== -1 }).length
+      && !noSwiperPage.filter(function(v){ return window.location.pathname.indexOf(v) !== -1 }).length
+    ) {
+      setTimeout(function() {
+        Swiper.use(myPlugin);
+        swiper = new Swiper('.banner-swiper.swiper-container', {
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          debugger: true,
+          preventInteractionOnTransition: true,
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        });
+      }, 400)
+    }</script>
+ </body>
+</html>
