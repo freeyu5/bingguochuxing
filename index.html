@@ -9,7 +9,9 @@
 		*{margin: 0;padding: 0;}
 		img{margin:0;padding:0;}
 		a{text-decoration: none;color:black;}
-		.conaiter{width: 100%;min-width: 1500px;position: relative;}
+		body{background-color: #fbfbfb;}
+		.header-conaiter{width: 100%;min-width: 1300px;position: relative;}
+		.body-conaiter{width: 100%;min-width: 1300px;position: relative;background-color: #fbfbfb;margin: 0px auto;}
 		#header{display: flex;height:50px;padding-left: 10%;padding-top: 10px;padding-bottom:20px;background-color:white;box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2);}
 		.header-logo{position: absolute;left: 18%; width: 220px;top: 15px;}
 		.header__menu{position: absolute;left: 45%; list-style-type: none;margin-top:20px;}
@@ -24,18 +26,17 @@
 		
 		<!--TIME KM-->
 
-
 		.km img{margin-right: 28px;}
 		.val{font-size: 75px;font-weight: bolder;color: #8cd166;}
 		.val>span{font-size: 26px;font-weight: 400;color: black;}
 
-		.other__bike__connaiter{width: 100%;text-align:center;}
+		.other__bike__connaiter{width: 100%;text-align:center;padding: 50px 0px;background-color: #f7f9f7;}
 		.bike-con{position: relative;width: 1200px;height: 300px;margin: 0px auto;}
 		.bikeimg{position: absolute;left: 50px;display: inline-block; width: 450px;height: 300px;background: url(img/danche.png);background-size: 100% 100%;vertical-align: top;}
 		.biketext{position: absolute;right: 180px;display: inline-block;text-align: left;width: 360px;line-height: 40px;vertical-align: top;}
 		.biketext .name{font-size: 38px;}
 
-		.join__conaiter{position: relative;width: 100%;background-color: rgb(255, 255, 255);padding: 50px 0;}
+		.join__conaiter{position: relative;width: 100%;}
 		.join__conaiter table{width: 1200px;height: 600px;position: relative;margin:0px auto;}
 		.join__conaiter table td{position: relative;}
 		.kf{position: absolute;bottom: 0px;left: 0px;height: 180px;width: 380px;box-shadow:0 8px 9px 0 rgba(0, 0, 0, 0.5);}
@@ -52,7 +53,7 @@
 		.text-title{font-size: 22px;font-weight: 800;}
 		.text-p{font-size: 17px;color: rgb(90, 90, 90);font-weight: 500;}
 
-		.fooder{position: relative;height: 450px;width: 100%;background-color: #fdfffb;padding-top: 50px;text-align: center;}
+		.fooder{position: relative;height: 450px;width: 100%;min-width: 1300px;padding-top: 150px;text-align: center;background-color: #f7f9f7;}
 		.fooder div{display: inline-block;}
 		.fooder-con{position: relative;width: 1200px;height: 165px;margin: 0 auto;}
 		.company{position: absolute;left: 0px;text-align: left;}
@@ -67,20 +68,21 @@
 		.about p:last-child{margin-bottom: 0px;}
 		.about p:first-child{color: rgb(0, 0, 0);}
 		.about a{font-size: 14px;color: rgb(120, 120,120);}
-		
-		
+				
 		.time__connaiter ul{list-style-type: none;text-align: left;display: inline-block;}
 		.time__connaiter img{display: inline-block;height: 120px;}
-		.time__connaiter{text-align: center;width: 100%;height: 600px;}
+		.time__connaiter{text-align: center;width: 100%;height: 460px;}
 		.time-con{position: relative;width: 1200px;margin: 0px auto;height: 100%;}
-		.time-con ul:first-child{position: absolute;left: 150px;}
-		.time-con ul:last-child{position: absolute;right: 150px;}
-		.time-con li{height: 120px;margin-bottom: 50px;}
-
+		.time-con ul:first-child{position: absolute;left: 220px;}
+		.time-con ul:last-child{position: absolute;right: 220px;}
+		.time-con li{height: 110px;margin-bottom: 50px;}
+		.time-con li:last-child{margin-bottom: 0px;}
+		.title-con{width: 1200px;text-align: center;margin: 0px auto;padding-top: 180px;padding-bottom: 80px;}
+		.title-con>div{font-size: 40px;}
 	</style>
 </head>
 <body>
-	<div class="conaiter">
+	<div class="header-conaiter">
 		<header id="header">
 			<div class="header__logo__container">
 				<a href="index.html"><img class="header-logo" src="img/logo2.png"/></a>
@@ -97,6 +99,11 @@
 		<div class="bike__connaiter">
 			<div class="bike-font"><span>清 洁 便 利</span><br><span>槟 果 与 你 同 行</span></div>
 		</div>
+	</div>
+	<div class="body-conaiter">
+		<div class="title-con">
+			<div>社会责任</div>
+		</div>
 		<div class="time__connaiter">
 			<div class="time-con">
 				<ul>
@@ -110,7 +117,10 @@
 					<li><img src="img/map.png" alt="map"></li>
 				</ul>
 			</div>
-		</div>
+		</div>	
+	<div class="title-con">
+		<div>关于槟果</div>
+	</div>
 		<div class="other__bike__connaiter">
 			<div class="bike-con">
 				<div class="bikeimg">
@@ -124,7 +134,10 @@
 					</p>
 				</div>
 			</div>
-		</div>
+		</div>	
+	<div class="title-con">
+		<div>加入槟果</div>
+	</div>
 		<div class="join__conaiter">
 			<table border="0">
 				<tr>
@@ -215,6 +228,7 @@
 				</tr>
 			</table>
 		</div>
+	</div>
 		<div class="fooder">
 			<div class="fooder-con">
 				<div class="company">
@@ -238,6 +252,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
 </body>
 </html>
